@@ -63,11 +63,11 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  gem "pry", "~> 0.12.2"
+  gem "pry", "~> 0.13.0"
 
-  gem "guard", "~>2.14.0"
-  gem "guard-rspec", "~> 4.7.2"
-  gem "guard-cucumber", "~> 2.1.2"
+  gem "guard", "~>2.18.0"
+  gem "guard-rspec", "~> 4.7.3"
+  gem "guard-cucumber", "~> 3.0.0"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
