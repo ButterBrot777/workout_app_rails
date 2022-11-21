@@ -73,3 +73,6 @@ capybara-*.html
 *.orig
 rerun.txt
 pickle-email-*.html
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
