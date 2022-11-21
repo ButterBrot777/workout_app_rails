@@ -63,7 +63,7 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  config.backtrace_excludion_patterns = [
+  config.backtrace_exclusion_patterns = [
     %r{/lib\d*/ruby/},
     %r{bin/},
     /gems/,
