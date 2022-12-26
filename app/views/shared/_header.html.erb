@@ -15,10 +15,7 @@
               <li class="mr-9 font-medium hover:text-gray-700">
                 <%= link_to 'Athletes Den', root_path, class: 'text-blue-900 underline hover:text-gray-400' %>
               </li>
-              <li class="mr-9 font-medium hover:text-gray-700"><a href="#">Features</a></li>
-              <li class="mr-9 font-medium hover:text-gray-700"><a href="#">Solutions</a></li>
-              <li class="mr-9 font-medium hover:text-gray-700"><a href="#">Resources</a></li>
-              <li class="font-medium hover:text-gray-700"><a href="#">Pricing</a></li>
+              <li class="mr-9 font-medium hover:text-gray-700"><%= link_to 'My Lounge', user_exercises_path(current_user) %></li>
             </ul>
           </div>
           <div class="w-auto hidden lg:block">
