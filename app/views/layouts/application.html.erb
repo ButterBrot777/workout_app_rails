@@ -12,9 +12,9 @@
   <body>
     <div class="hidden bg-red-300 bg-green-300"></div>
     <%= render 'shared/header' %>
-    <div class="mx-auto xl:px-40 py-5">
+    <div class="mx-auto xl:px-40 py-5 h-[calc(100vh-80px)] w-screen flex flex-col justify-between">
       <%= render 'shared/main' %>
-      <%= render 'shared/footer' %>
+      <%= render 'shared/footer', class: 'flex-row justify-self-center' %>
     </div>
   </body>
 </html>
