@@ -1,0 +1,27 @@
+<%= form_for([current_user, @exercise],
+html: {class: '', role: 'form'}) do |f| %>
+  <% if @exercise.errors.any? %>
+    <h2><%= pluralize(@exercise.errors.count, 'error') %>
+      prohibited this exercise from being saved:</h2>
+    <ul>
+      <% @exercise.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <div class="flex flex-col">
+    <%= f.label :duration_in_min, 'Duration (min)' %>
+    <%= f.number_field :duration_in_min, class: '' %>
+  </div>
+  <div class="flex flex-col">
+    <%= f.label :workout, 'Workout details' %>
+    <%= f.text_area :workout, class: '', rows: '10' %>
+  </div>
+  <div class="flex flex-col">
+    <%= f.label :workout_date, 'Activity date' %>
+    <%= f.text_field :workout_date, class: '' %>
+  </div>
+  <div class="flex">
+    <%= f.submit class: "mt-5 py-3 px-5 text-white font-semibold rounded-xl focus:ring focus:ring-green-300 bg-green-600 hover:bg-green-700 transition ease-in-out duration-200" %>
+  </div>
+<% end %>

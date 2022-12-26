@@ -1,0 +1,7 @@
+<h1 class="">New exercise for <span class='text-green-500'><%= current_user.full_name.upcase %></span></h1>
+<%= render 'form' %>
+<div class="flex">
+  <%= link_to 'Back', user_exercises_path(current_user),
+  id: 'new-exer-btn',
+  class: "flex box-content mt-5 py-3 px-5 text-white font-semibold rounded-xl focus:ring focus:ring-gray-300 bg-gray-600 hover:bg-gray-700 transition ease-in-out duration-200" %>
+</div>

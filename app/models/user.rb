@@ -7,4 +7,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :exercises
+
+  def full_name
+    email.split(/@/, 2).first
+    #   [first_name, last_name].split(' ')
+  end
 end
