@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class ExercisesController < ApplicationController
-  def index; end
+  def index
+    @exercises = current_user.exercises
+  end
 
   def new
     @exercise = current_user.exercises.new
@@ -9,6 +11,10 @@ class ExercisesController < ApplicationController
 
   def show
     @exercise = current_user.exercises.find_by(id: params[:id])
+  end
+
+  def edit
+    @exercise = Exercise.find(params[:id])
   end
 
   def create
@@ -22,6 +28,23 @@ class ExercisesController < ApplicationController
       render :new
     end
   end
+
+  def update
+    @exercise = Exercise.find(params[:id])
+  end
+
+  def destroy
+    binding.pry
+    @exercise = Exercise.find(params[:id])
+    if @exercise.destroy
+      flash[:notice] = 'Exercise was deleted'
+      redirect_to user_exercises_path
+    else
+      flash[:alert] = 'Exercise failed to delete'
+    end
+  end
+
+  private
 
   def exercise_params
     params.require(:exercise).permit(:duration_in_min, :workout, :workout_date, :user_id)

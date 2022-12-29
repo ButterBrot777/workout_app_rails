@@ -1,14 +1,14 @@
 <h1>Show exercise <%= @exercise&.id || 'no name' %>'s Workout details</h1>
-<div class="flex flex-col">
-  <h3 class="">Duration (min)</h3>
+<div class="flex">
+  <h3 class="mr-5">Duration (min): </h3>
   <p class=""><%= @exercise.duration_in_min %></p>
 </div>
-<div class="flex flex-col">
-  <h3 class="">Workout details</h3>
+<div class="flex">
+  <h3 class="mr-5">Workout details: </h3>
   <p class=""><%= truncate(@exercise.workout, length: 50) %></p>
 </div>
-<div class="flex flex-col">
-  <h3 class="">Activity date:</h3>
+<div class="flex">
+  <h3 class="mr-5">Activity date: </h3>
   <p class=""><%= @exercise.workout_date %></p>
 </div>
 <div class="flex">
