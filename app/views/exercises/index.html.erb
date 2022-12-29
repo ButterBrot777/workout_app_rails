@@ -1,3 +1,4 @@
+<%= javascript_include_tag 'exercise.js' %>
 <div class="block mt-5 mb-5">
   <%= link_to 'New Workout', new_user_exercise_path(current_user), class: "py-3 px-5 w-full text-white font-semibold rounded-xl focus:ring focus:ring-green-300 bg-green-600 hover:bg-green-700 transition ease-in-out duration-200" %>
 </div>
@@ -20,12 +21,13 @@
           <td><%= exercise.workout_date %></td>
           <td><%= link_to 'Show', [current_user, exercise], class: "underline" %></td>
           <td><%= link_to 'Edit', [:edit, current_user, exercise], class: "underline" %></td>
-          <td><%= link_to 'Destroy', user_exercise_path(current_user, exercise), method: :delete, data: { confirm: 'Delete exercise?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <br>
+          <td><%= link_to 'Destroy', user_exercise_path(current_user, exercise), data: { turbo_method: :delete, turbo_confirm: 'Delete exercise?' }, class: "underline" %></td>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
 <% else %>
   <div class="block text-red-200" role="alert">No Workouts Yet</div>
   <br>

@@ -1,5 +1,5 @@
 <%= form_for([current_user, @exercise],
-html: {class: 'block', role: 'form'}) do |f| %>
+html: {class: 'block', role: 'form'}, remote: true) do |f| %>
   <% if @exercise.errors.any? %>
     <h2><%= pluralize(@exercise.errors.count, 'error') %>
       prohibited this exercise from being saved:</h2>

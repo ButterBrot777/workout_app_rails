@@ -31,10 +31,16 @@ class ExercisesController < ApplicationController
 
   def update
     @exercise = Exercise.find(params[:id])
+
+    if @exercise.update(exercise_params)
+      flash[:notice] = 'Exercise was updated'
+    else
+      flash[:alert] = 'Exercise failed to update'
+    end
+    redirect_to user_exercises_path(current_user)
   end
 
   def destroy
-    binding.pry
     @exercise = Exercise.find(params[:id])
     if @exercise.destroy
       flash[:notice] = 'Exercise was deleted'
